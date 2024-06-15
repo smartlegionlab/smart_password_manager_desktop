@@ -1,0 +1,2 @@
+Pyqt5==5.15.10
+smartpasslib==0.4.2
