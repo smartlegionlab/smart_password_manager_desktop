@@ -24,6 +24,16 @@ Other apps for generating and managing smart passwords:
 
 ---
 
+## Help:
+
+- Clone the project
+- Go to the project folder
+- `python -m venv venv`
+- `source venv/bin/activate`
+- `python app.py`
+
+---
+
 ## Images:
 
 ![LOGO](https://github.com/smartlegionlab/smartpassman/raw/master/data/images/smartpassman.png)
