@@ -95,7 +95,7 @@ class SmartPassMan:
         :param length: password length.
         :return: SmartPassword object.
         """
-        key = self.smart_pass_master.get_public_key(login=login, secret=secret)
+        key = self.smart_pass_master.generate_public_key(login=login, secret=secret)
         smart_password = SmartPassword(login=login, key=key, length=length)
         self.add(smart_password)
         return smart_password

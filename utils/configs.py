@@ -8,16 +8,15 @@
 
 
 class Config:
-    name = 'smartpassman'
+    name = 'utils'
     title = 'Smart Password Manager'
-    copyright = 'Copyright © 2018-2024, A.A. Suvorov; All rights reserved.'
+    copyright = 'Copyright © 2018-2024, A.A. Suvorov; Smart Legion Lab; All rights reserved.'
     author = 'A.A. Suvorov'
-    url = 'https://github.com/smartlegionlab/'
-    description = 'A graphical, cross-platform application for storing, ' \
-                  'generating, and recovering complex, smart passwords.'
+    url = 'https://github.com/smartlegionlab/smartpassman/'
+    description = 'Smart Password Manager'
     label_len_title = 'Password length'
-    btn_new_pass_title = 'New'
-    btn_remove_pass_title = 'Remove'
-    btn_get_password_title = 'Get Password '
+    btn_new_pass_title = '+ Add'
+    btn_remove_pass_title = 'Delete'
+    btn_get_password_title = 'Get Password'
     btn_help_title = 'Help'
     btn_exit_title = 'Exit'

@@ -27,8 +27,8 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
-from smartpassman.config import Config
-from smartpassman.passman import SmartPassMan, SmartPassword
+from utils.configs import Config
+from utils.passman import SmartPassMan, SmartPassword
 
 
 class MainWindow(QWidget):
@@ -36,8 +36,8 @@ class MainWindow(QWidget):
         super().__init__(parent)
         self._config = Config()
         self._smart_pass_man = SmartPassMan()
-        self.setWindowTitle(f'{self._config.description}.')
-        self.resize(640, 480)
+        self.setWindowTitle(f'{self._config.description}')
+        self.resize(800, 600)
         self.vertical_layout = QVBoxLayout()
         self.vertical_layout_2 = QVBoxLayout()
         self.vertical_layout_3 = QVBoxLayout()
@@ -142,9 +142,9 @@ class MainWindow(QWidget):
         length = self.spin_box.value()
 
         if login and secret and status_login and status_secret:
-            key = self._smart_pass_man.smart_pass_master.get_public_key(login=login, secret=secret)
+            key = self._smart_pass_man.smart_pass_master.generate_public_key(login=login, secret=secret)
             smart_password = SmartPassword(login=login, key=key, length=length)
-            password = self._smart_pass_man.smart_pass_master.get_smart_password(
+            password = self._smart_pass_man.smart_pass_master.generate_smart_password(
                 login=smart_password.login,
                 secret=secret,
                 length=length,
@@ -193,13 +193,13 @@ class MainWindow(QWidget):
             )
             if secret and status:
                 smart_password = self._smart_pass_man.get_password(item.text())
-                check_status = self._smart_pass_man.smart_pass_master.check_data(
+                check_status = self._smart_pass_man.smart_pass_master.check_public_key(
                     login=smart_password.login,
                     secret=secret,
                     public_key=smart_password.key
                 )
                 if check_status:
-                    password = self._smart_pass_man.smart_pass_master.get_smart_password(
+                    password = self._smart_pass_man.smart_pass_master.generate_smart_password(
                         smart_password.login,
                         secret,
                         smart_password.length

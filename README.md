@@ -1,5 +1,19 @@
-# Smart Password Manager
-smartpassman - A graphical, cross-platform application for storing, generating, and recovering complex, smart passwords.
+# Smart Password Manager v0.5.0
+
+Desktop version
+
+---
+
+> Smart Password Manager - A graphical, cross-platform application for storing, generating, and recovering complex, smart passwords.
+
+Works on a unique technology that has no analogues using a library [smartpasslib](https://github.com/smartlegionlab/smartpasslib/).
+
+Other apps for generating and managing smart passwords:
+
+- [Console Smart Password Manager](https://github.com/smartlegionlab/clipassmanager/)
+- [Console Smart Password Generator](https://github.com/smartlegionlab/clipassgen/)
+- [Smart Password Library](https://github.com/smartlegionlab/smartpasslib/)
+- [Telegram Bot - Smart Password Manager](https://t.me/smartpasswordmanagerbot)
 
 ---
 
@@ -38,4 +52,3 @@ smartpassman - A graphical, cross-platform application for storing, generating, 
     Copyright © 2018-2021, A.A Suvorov
     All rights reserved.
     --------------------------------------------------------
-
