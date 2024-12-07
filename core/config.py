@@ -13,7 +13,7 @@ class Config:
     description = 'Smart Password Manager'
     copyright = 'Copyright © 2018-2024, A.A. Suvorov; Smart Legion Lab; All rights reserved.'
     author = 'A.A. Suvorov'
-    url = 'https://github.com/smartlegionlab/smartpassman/'
+    url = 'https://github.com/smartlegionlab/smart_password_manager_desktop/'
     label_len_title = 'Password length'
     btn_new_pass_title = '+ Add'
     btn_remove_pass_title = 'Delete'
