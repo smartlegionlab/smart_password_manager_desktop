@@ -1,4 +1,4 @@
-# Smart Password Manager v0.6.1 
+# Smart Password Manager v0.6.2 
 
 ### Desktop version
 
@@ -27,11 +27,12 @@ Other apps for generating and managing smart passwords:
 
 ---
 
-## What's new? <sup>v0.6.1</sup>
+## What's new? <sup>v0.6.2</sup>
 
 - Fixed errors.
 - Improved user interface.
 - Code refactoring.
+- Upgrade to new version of [smartpasslib](https://github.com/smartlegionlab/smartpasslib/)
   
 ---
 

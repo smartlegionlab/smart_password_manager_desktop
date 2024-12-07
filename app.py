@@ -25,10 +25,9 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
+from smartpasslib import SmartPasswordManager, SmartPasswordFactory
 
 from core.config import Config
-from core.model import SmartPasswordFactory
-from core.manager import SmartPasswordManager
 
 
 class PasswordInputDialog(QDialog):

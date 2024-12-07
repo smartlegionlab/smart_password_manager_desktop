@@ -2,4 +2,4 @@ PyQt5==5.15.11
 PyQt5-Qt5==5.15.15
 PyQt5-stubs==5.15.6.0
 PyQt5_sip==12.15.0
-smartpasslib==0.5.2
+smartpasslib==0.6.2

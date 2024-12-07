@@ -8,4 +8,4 @@
 # --------------------------------------------------------
 """A graphical, cross-platform application for storing,
 generating, and recovering complex, smart passwords."""
-__version__ = '0.6.1'
+__version__ = '0.6.2'
