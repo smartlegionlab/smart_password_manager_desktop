@@ -11,7 +11,7 @@ import json
 
 from smartpasslib import SmartPasswordMaster
 
-from core.smart_password_factory import SmartPassword
+from core.model import SmartPassword
 
 
 class SmartPasswordManager:

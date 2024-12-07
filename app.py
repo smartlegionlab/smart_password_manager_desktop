@@ -17,20 +17,18 @@ from PyQt5.QtWidgets import (
     QMessageBox,
     QLineEdit,
     QDialog,
-    QHBoxLayout,
     QTableWidget,
     QTableWidgetItem,
     QSpinBox,
-    QSpacerItem,
-    QSizePolicy,
-    QFrame, QInputDialog
+    QFrame,
+    QHeaderView
 )
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
 from core.config import Config
-from core.smart_password_factory import SmartPasswordFactory
-from core.smart_password_manager import SmartPasswordManager
+from core.model import SmartPasswordFactory
+from core.manager import SmartPasswordManager
 
 
 class PasswordInputDialog(QDialog):
@@ -109,6 +107,10 @@ class MainWindow(QWidget):
         self.table_widget.setColumnCount(5)
         self.table_widget.setHorizontalHeaderLabels(['Login', 'Length', 'Public Key', 'Get', 'Delete'])
         self.table_widget.setEditTriggers(QTableWidget.NoEditTriggers)
+
+        for i in range(5):
+            self.table_widget.horizontalHeader().setSectionResizeMode(i, QHeaderView.Interactive)
+
         self.vertical_layout.addWidget(self.table_widget)
 
         self.btn_new_password = QPushButton(self.config.btn_new_pass_title)
@@ -122,6 +124,16 @@ class MainWindow(QWidget):
         self.btn_exit = QPushButton(self.config.btn_exit_title)
         self.btn_exit.clicked.connect(self.close)
         self.vertical_layout.addWidget(self.btn_exit)
+
+        self.line = QFrame()
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+        self.vertical_layout.addWidget(self.line)
+
+        self.copyright_label = QLabel()
+        self.copyright_label.setAlignment(Qt.AlignCenter)
+        self.copyright_label.setText(self.config.copyright)
+        self.vertical_layout.addWidget(self.copyright_label)
 
         self.setLayout(self.vertical_layout)
         self._init()
@@ -231,7 +243,31 @@ class MainWindow(QWidget):
         return reply == QMessageBox.Yes
 
     def show_dialog(self, title, name, text):
-        QInputDialog.getMultiLineText(self, title, name, text=text)
+        dialog = QDialog(self)
+        dialog.setWindowTitle(title)
+
+        layout = QVBoxLayout(dialog)
+
+        label = QLabel(name)
+        layout.addWidget(label)
+
+        password_text = QLineEdit()
+        password_text.setText(text)
+        password_text.setReadOnly(True)
+        layout.addWidget(password_text)
+
+        copy_button = QPushButton("Copy to clipboard")
+        copy_button.clicked.connect(lambda: self.copy_to_clipboard(password_text.text(), dialog))
+        layout.addWidget(copy_button)
+
+        dialog.setLayout(layout)
+        dialog.exec_()
+
+    def copy_to_clipboard(self, text, dialog):
+        clipboard = QApplication.clipboard()
+        clipboard.setText(text)
+        self.show_msg('Success!', 'Password copied to clipboard.')
+        dialog.accept()
 
     def show_msg(self, title, msg):
         QMessageBox.about(self, title, msg)

@@ -1,10 +1,11 @@
-# Smart Password Manager v0.5.0
+# Smart Password Manager v0.6.1 
 
-Desktop version
+### Desktop version
 
 ---
 
-> Smart Password Manager - A graphical, cross-platform application for storing, generating, and recovering complex, smart passwords.
+> Smart Password Manager - A graphical, cross-platform application for storing, 
+> generating, and recovering complex, smart passwords.
 
 Works on a unique technology that has no analogues using a library [smartpasslib](https://github.com/smartlegionlab/smartpasslib/).
 
@@ -19,9 +20,19 @@ Other apps for generating and managing smart passwords:
 
 ## Supported:
 
-- Linux
-- Windows
+- Linux (All)
+- Windows (All)
 
+> WARNING!!! Requires [Python](https://python.org) 3.7+ installed!!!
+
+---
+
+## What's new? <sup>v0.6.1</sup>
+
+- Fixed errors.
+- Improved user interface.
+- Code refactoring.
+  
 ---
 
 ## Help:
@@ -30,6 +41,7 @@ Other apps for generating and managing smart passwords:
 - Go to the project folder
 - `python -m venv venv`
 - `source venv/bin/activate`
+- `pip install -r requirements.txt`
 - `python app.py`
 
 ---
@@ -37,6 +49,10 @@ Other apps for generating and managing smart passwords:
 ## Images:
 
 ![LOGO](https://github.com/smartlegionlab/smartpassman/raw/master/data/images/smartpassman.png)
+
+![LOGO](https://github.com/smartlegionlab/smartpassman/raw/master/data/images/smartpassman2.png)
+
+![LOGO](https://github.com/smartlegionlab/smartpassman/raw/master/data/images/smartpassman3.png)
 
 ***
 
